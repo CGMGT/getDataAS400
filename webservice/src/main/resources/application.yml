@@ -1,0 +1,121 @@
+server:
+    port: 8007
+
+spring:
+    profiles:
+        active: qa-remote
+    jpa:
+        properties:
+            hibernate:
+                show_sql: true
+                use_sql_comments: true
+                format_sql: true
+                type: trace
+                legacy_limit_handler: true
+                proc:
+                    param_null_passing: true
+        show-sql: true
+    servlet:
+        multipart:
+            max-file-size: 50MB
+            max-request-size: 50MB
+    mail:
+        host: smtp.tigo.com.gt
+        port: 25
+        properties:
+            mail:
+                smtp:
+                    auth: false
+
+---
+
+
+spring:
+    config:
+        activate:
+            on-profile: development
+    datasource:
+        resourceManager:
+            jndi-name: jdbc/ResourceManagerDS
+        as400:
+            jndi-name: jdbc/AS400DEV
+logging:
+    level:
+        org.hibernate.SQL: debug
+        org.hibernate.trace: debug
+        gt.com.tigo: debug
+azure:
+    application:
+        id: 7698b4d8-ba1d-46f1-bd19-5f2fa2137dc7
+        callback-url: http://localhost:3000
+
+
+---
+
+
+spring:
+    config:
+        activate:
+            on-profile: test-remote
+    datasource:
+        resourceManager:
+            jndi-name: jdbc/ResourceManagerDS
+        as400:
+            jndi-name: jdbc/AS400DEV
+logging:
+    level:
+        org.hibernate.SQL: debug
+        org.hibernate.trace: debug
+        gt.com.tigo: debug
+azure:
+    application:
+        id: 7698b4d8-ba1d-46f1-bd19-5f2fa2137dc7
+        callback-url: http://localhost:3000
+
+
+
+---
+
+spring:
+    config:
+        activate:
+            on-profile: qa-remote
+    datasource:
+        resourceManager:
+            jndi-name: jdbc/ResourceManagerDS
+        as400:
+            jndi-name: jdbc/AS400DEV
+logging:
+    level:
+        org.hibernate.SQL: debug
+        org.hibernate.trace: debug
+        gt.com.tigo: debug
+azure:
+    application:
+        id: 7698b4d8-ba1d-46f1-bd19-5f2fa2137dc7
+        callback-url: http://localhost:3000
+
+
+
+---
+
+spring:
+    config:
+        activate:
+            on-profile: production
+    datasource:
+        resourceManager:
+            jndi-name: jdbc/ResourceManagerDS
+        as400:
+            jndi-name: jdbc/AS400DEV
+logging:
+    level:
+        org.hibernate.SQL: debug
+        org.hibernate.trace: debug
+        gt.com.tigo: debug
+azure:
+    application:
+        id: 7698b4d8-ba1d-46f1-bd19-5f2fa2137dc7
+        callback-url: http://localhost:3000
+
+
