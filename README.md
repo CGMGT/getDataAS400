@@ -1,4 +1,4 @@
-# Backend Tigo Web Service AS400
+# Backend Web Service AS400
 ###### Version 1.0
 
 Servicios REST para Tigo Ordenes de Trabajo AS400.
@@ -16,7 +16,7 @@ Servicios REST para Tigo Ordenes de Trabajo AS400.
 ## Usage
 #### Clone repository
 ```
-git clone https://gitlab-bsd.tigo.com.gt/BSD-APPS/Instalaciones-Tecnicas/WebServiceGetDataAS400/src.git
+git clone https://github.com/CGMGT/getDataAS400/src.git
 ```
 #### Project information
 ```
